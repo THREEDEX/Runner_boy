@@ -1588,19 +1588,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 50.0649986
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -37.2900009
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 76.1299973
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 122.580002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_AnchorMin.x
@@ -1608,7 +1608,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_AnchorMax.x
@@ -1616,7 +1616,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_Pivot.x
@@ -1860,6 +1860,7 @@ GameObject:
   - 224: {fileID: 843864226}
   - 222: {fileID: 843864228}
   - 114: {fileID: 843864227}
+  - 114: {fileID: 843864229}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1922,6 +1923,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 843864225}
+--- !u!114 &843864229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 843864225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: .5}
+  m_EffectDistance: {x: -2.76999998, y: .310000002}
+  m_UseGraphicAlpha: 1
 --- !u!1 &862656672
 GameObject:
   m_ObjectHideFlags: 0
