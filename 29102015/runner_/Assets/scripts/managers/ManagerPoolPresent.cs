@@ -67,10 +67,8 @@ public class ManagerPoolPresent : MonoBehaviour {
         }
         MakeStartScenobstacle();
 		InvokeRepeating ("GenericMonets",0,timeMakeLoopMOnets);
-        InvokeRepeating("GenericObstacle", 0, 1);
-	}
-	void Update () {
-	
+        InvokeRepeating("GenericObstacle", 3, 2);
+		InvokeRepeating ("GenericConus",5,5);
 	}
     private void MakeStartScenobstacle()
     {
@@ -78,14 +76,16 @@ public class ManagerPoolPresent : MonoBehaviour {
         {
             for (int j = 0; j < loopCountObstacle; j++)
             {
-                GameObject go = GameObject.Instantiate(library.LibreryObstacl[i].prefab);
-				if(!go.name.Contains("monets"))
-                	go.transform.SetParent(GameObject.Find("#obstacls").transform);
-				else if(go.name.Contains("monets"))
-					go.transform.SetParent(GameObject.Find("#monets").transform);
+				if(!library.LibreryObstacl[i].muchObject){
+	                GameObject go = GameObject.Instantiate(library.LibreryObstacl[i].prefab);
+					if(!go.name.Contains("monets"))
+	                	go.transform.SetParent(GameObject.Find("#obstacls").transform);
+					else if(go.name.Contains("monets"))
+						go.transform.SetParent(GameObject.Find("#monets").transform);
 
-                obstacle.Add(go);
-                go.SetActive(false);
+	                obstacle.Add(go);
+	                go.SetActive(false);
+				}
             }
 
 
@@ -114,19 +114,20 @@ public class ManagerPoolPresent : MonoBehaviour {
 
 		}
 		}
-		GenericConus();
+	
 
 	}
 	 void GenericConus()
 	{
 		countPositionMonets = 0;
-		int randomMakeNumberConus = Random.Range (0, (conus.Count -1)/2);
+		int randomMakeNumberConus = Random.Range (5, (conus.Count -1));
 		randomPositionMonet = Random.Range (0,randomPositionMonets.Length);
 		randomPositionMonet = randomPositionMonets [randomPositionMonet];
 		for (int i = 0; i<randomMakeNumberConus; i++) {
 			if(conus[i].activeInHierarchy == false){
 				countPositionMonets += 3;
 				conus[i].transform.position = new Vector3(randomPositionMonet,0,spawnPoint.transform.position.z - countPositionMonets);
+				conus[i].transform.localEulerAngles = new Vector3(0,0,0);
 				conus[i].SetActive(true);
 				
 			}
