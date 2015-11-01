@@ -125,7 +125,7 @@ public class ManagerPoolPresent : MonoBehaviour {
 		randomPositionMonet = randomPositionMonets [randomPositionMonet];
 		for (int i = 0; i<randomMakeNumberConus; i++) {
 			if(conus[i].activeInHierarchy == false){
-				countPositionMonets += 3;
+				countPositionMonets += 7;
 				conus[i].transform.position = new Vector3(randomPositionMonet,0,spawnPoint.transform.position.z - countPositionMonets);
 				conus[i].transform.localEulerAngles = new Vector3(0,0,0);
 				conus[i].SetActive(true);
