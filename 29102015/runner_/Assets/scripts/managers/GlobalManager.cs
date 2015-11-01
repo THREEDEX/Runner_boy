@@ -7,6 +7,7 @@ public class GlobalManager : MonoBehaviour {
     public static event EventManager.AnimationPlayer AnimationJump; //jump
     public static event EventManager.AnimationPlayer AnimationDeath;// Death
     public static event EventManager.Reflection reflect;            // impuls
+	public static event EventManager.AnimationPlayer RunAnimation;
     
     
     
@@ -29,6 +30,7 @@ public class GlobalManager : MonoBehaviour {
     bool all = true;
     bool tmp_all = false;
 	public bool pause = true;// пауза в игре
+	bool tmpPause;
     [SerializeField]
     Transform boyTransform = null;
     [SerializeField]
@@ -56,9 +58,19 @@ public class GlobalManager : MonoBehaviour {
 	public AnimationCurve trPosFishks;//  перемещение  фишки по  параболе
 	[SerializeField]
 	public AnimationCurve rotPosFishks;//поворот.
+	public AnimationCurve trPosFishksRigth;
+	public AnimationCurve rotPosFishksRight;
+	[SerializeField]
+	public enum pos {
+		posZero,
+		posMinesSeven,
+		posPlusSeven
+	}
+	public pos _pos;
 	void Start () {
         tmpTimerShiftRoad = timerShiftRoad;
         tmpRotationCam = timerRotationCam;
+		tmpPause = pause;
         
 	}
 	void Update () {
@@ -74,6 +86,11 @@ public class GlobalManager : MonoBehaviour {
             reflection = false;
             reflect();
         } //RotationCam();
+		if (pause != tmpPause) {
+			RunAnimation ();
+			tmpPause = pause;
+		}
+
         
 	}
     

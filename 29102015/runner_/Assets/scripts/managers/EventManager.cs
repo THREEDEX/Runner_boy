@@ -21,7 +21,14 @@ public class EventManager : MonoBehaviour {
         GlobalManager.AnimationJump += anim.Jump;
         GlobalManager.AnimationDeath += anim.Death;
         GlobalManager.reflect += reflect.ReflectionActive;
-        player.ReflectImp += reflect.ReflectionActive;
+		GlobalManager.RunAnimation += anim.Run;
+		player.ReflectImp += reflect.ReflectionActive;
+
 		//moveTurnOff.makePlatform += poolObj.SetActivePlatform;
+    }
+
+    void HandleRunAnimation ()
+    {
+    	
     }
 }

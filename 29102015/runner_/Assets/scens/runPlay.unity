@@ -1588,19 +1588,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 50.0649986
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -37.2900009
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 76.1299973
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 122.580002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_AnchorMin.x
@@ -1608,7 +1608,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_AnchorMax.x
@@ -1616,7 +1616,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22429424, guid: 7243fcf143cc95f4ebb9a6177f88abae, type: 2}
       propertyPath: m_Pivot.x
@@ -1846,6 +1846,42 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+  trPosFishksRigth:
+    serializedVersion: 2
+    m_Curve:
+    - time: -7
+      value: 2
+      inSlope: 1.89089215
+      outSlope: 1.89089215
+      tangentMode: 0
+    - time: -5
+      value: 5
+      inSlope: -.0789568201
+      outSlope: -.0789568201
+      tangentMode: 0
+    - time: 0
+      value: 0
+      inSlope: -.657422483
+      outSlope: -.657422483
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  rotPosFishksRight:
+    serializedVersion: 2
+    m_Curve:
+    - time: -7
+      value: -360
+      inSlope: 33.4229546
+      outSlope: 33.4229546
+      tangentMode: 0
+    - time: 0
+      value: -260
+      inSlope: 5.52327394
+      outSlope: 5.52327394
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  _pos: 0
 --- !u!4 &833645415 stripped
 Transform:
   m_PrefabParentObject: {fileID: 480810, guid: c6a58682fc3ce7d49b864dcab1051067, type: 2}
@@ -2913,7 +2949,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1350070143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.09000015, z: 6.69999981}
+  m_LocalPosition: {x: 0, y: 0, z: 6.69999981}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 240089493}
@@ -3019,7 +3055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animation: {fileID: 1350070145}
-  NumberAnimation: 0
+  NumberAnimation: 3
   SpeedAnimation: 1.39999998
   myPlayer: {fileID: 1350070144}
   positionsRoad: {x: 0, y: 0, z: 0}

@@ -105,6 +105,14 @@ public class animations : MonoBehaviour {
             timerShift -= Time.deltaTime;
         }
     }
+	public void Run()
+	{
+		NumberAnimation = 0;
+	}
+	public void Idle()
+	{
+		NumberAnimation = 3;
+	}
 	IEnumerator WaitAndPrint(float time)
 	{
 		NumberAnimation = 0;
