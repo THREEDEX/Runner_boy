@@ -53,6 +53,11 @@ public class GlobalManager : MonoBehaviour {
     float timerRotationCam;
     float tmpRotationCam;
     private float valuePosX = 0;
+	[SerializeField]
+	private bool rotationEnabledPlatform = false;
+	private Vector3 tmpEnabledRotation = new Vector3 (-1,1);
+	private int directionRotation;
+	public Vector2 rotationPointPlatform = new Vector2 (30,-30);
     public int CostInt = 0;
 	[SerializeField]
 	public AnimationCurve trPosFishks;//  перемещение  фишки по  параболе
@@ -61,22 +66,21 @@ public class GlobalManager : MonoBehaviour {
 	public AnimationCurve trPosFishksRigth;
 	public AnimationCurve rotPosFishksRight;
 	[SerializeField]
-	public enum pos {
-		posZero,
-		posMinesSeven,
-		posPlusSeven
-	}
-	public pos _pos;
+	float changeRotationPlatform = 30;//   изгиб   платформы для визуализации 
+	[SerializeField]
+	Material mat;
 	void Start () {
         tmpTimerShiftRoad = timerShiftRoad;
         tmpRotationCam = timerRotationCam;
 		tmpPause = pause;
-        
+		mat.shader = Shader.Find("Mobile/сurve");        
 	}
 	void Update () {
         
         Death();
+		if(!pause)
         Swipe_();
+		ChangeOfPositionPlatform (); //  изменение изгиба  обьектов  платформы
         if (change)
         {
             ShiftX(count);
@@ -102,6 +106,51 @@ public class GlobalManager : MonoBehaviour {
             AnimationDeath();
         }
     }
+	void ChangeOfPositionPlatform()
+	{
+		if (rotationEnabledPlatform) {
+			if(tmpEnabledRotation.x != tmpEnabledRotation.y){
+				switch((int)changeRotationPlatform)
+				{
+				case 30: //+
+					directionRotation = -1;
+					tmpEnabledRotation.x = tmpEnabledRotation.y;
+					break;
+				case -30: //-
+					directionRotation = 1;
+					tmpEnabledRotation.x = tmpEnabledRotation.y;
+					break;
+				}
+			}
+			switch(directionRotation)
+			{
+			case 1:
+				if(changeRotationPlatform != rotationPointPlatform.x)
+				{
+					changeRotationPlatform += Time.deltaTime *4;
+				}
+				else 
+				{
+					rotationEnabledPlatform = false;
+					tmpEnabledRotation.x = -1;
+
+				}
+				break;
+			case -1:
+				if(changeRotationPlatform != rotationPointPlatform.y){
+					changeRotationPlatform -= Time.deltaTime *4;
+
+				}
+				else 
+				{
+					rotationEnabledPlatform = false;
+					tmpEnabledRotation.x = -1;
+				}
+				break;
+
+			}
+		}
+	}
     public void Swipe_()
     {
         if (Input.GetMouseButtonDown(0))
@@ -214,6 +263,7 @@ public class GlobalManager : MonoBehaviour {
         }
         
     }
+
     void RotationCam()
     {
         if (ShiftCamera)

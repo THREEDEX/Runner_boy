@@ -14,6 +14,6 @@ public class CameraLookAtPlayer : MonoBehaviour {
     }
     void LookAt()
     {
-        transform.position = Vector3.Lerp(transform.position, new Vector3(player.position.x,transform.position.y,player.position.z-10),Time.deltaTime * speed);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(player.position.x,player.position.y+10,player.position.z-10),Time.deltaTime * speed);
     }
 }
