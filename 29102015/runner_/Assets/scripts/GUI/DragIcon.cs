@@ -14,9 +14,11 @@ public class DragIcon : MonoBehaviour {
 	[SerializeField]
 	float speed = 70f;
 	Vector2 v = new Vector2(1,-1);
+	public static bool parentSlot = true;
 	void Start()
 	{
 		tmpId = idIcon;
+
 
 	}
 	void Update()
@@ -35,9 +37,11 @@ public class DragIcon : MonoBehaviour {
 	public void Click()
 	{
 		objDrag = gameObject.transform;
+		parentSlot = false;
 	}
 	public void ClickUp()
 	{
 		objDrag = null;
+		parentSlot = true;
 	}
 }
